@@ -1,24 +1,33 @@
-Documentation - Info about files and working of project.
+detect_image.py : For detecting on images.
 
-1. **main.py**:
+
+detect_video.py : For detecting on videos.
+
+
+detect_camera_realtime.py : For detecting in real-time via camera.
+
+
+ main.py:
    - Loads YOLOv8 models for vehicle detection and license plate detection.
-   - Reads a video file (sample2.mp4) frame by frame.
+   - Reads a video file frame by frame.
    - Detects vehicles using YOLOv8 and tracks them using the SORT (Simple Online and Realtime Tracking) algorithm.
    - Detects license plates on the detected vehicles using the license plate detection model.
    - Reads the license plate numbers using EasyOCR.
    - Saves the results in a CSV file (test.csv).
 
-2. **util.py**:
+
+util.py:
    - Contains utility functions for writing results to a CSV file, checking license plate format, formatting license plate text, and reading license plates from images.
+
    
-3. **visualize.py**:
+visualize.py:
    - Visualizes the results by drawing bounding boxes around vehicles and license plates.
    - Combines the license plate image with the original frame and adds the license plate number as text.
    - Saves the processed frames as a video (out.mp4).
 
-4. **add_missing_data.py**:
+
+add_missing_data.py:
    - Interpolates missing data in the CSV file to ensure that each frame has consistent information for each vehicle.
    - It uses linear interpolation to estimate bounding boxes and other details for frames where data is missing.
    - Writes the updated data to a new CSV file (test_interpolated.csv).
 
-Overall, this project takes a video as input, performs vehicle detection, license plate recognition, tracking, and visualization, and then saves the results in a CSV file and an output video. The interpolation script helps fill in missing data to create a more complete dataset.
