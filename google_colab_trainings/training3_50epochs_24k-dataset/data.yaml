@@ -1,0 +1,12 @@
+# dataset root dir - path of the dataset in my Google Drive
+path: '/content/gdrive/My Drive/MCA Project Datasets/dataset_license_plates_24k_images_yolov8' 
+
+# train images (relative to 'path')
+train: train/images
+val: valid/images
+test: test/images
+
+# List Number of classes and their names
+nc: 1
+names: ['License_Plate']
+
